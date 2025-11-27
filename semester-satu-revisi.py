@@ -16,21 +16,19 @@ kurs = {
     "rub" : 80.8,     # Russian Ruble
     "zar" : 17.2,     # South African Rand
     "btc" : 90826,    # Bitcoin
-    "btc" : 2991.3    # Etherium
+    "eth" : 2991.3    # Etherium
 }
 
 def kurs_converter():
     asal = input("🔸 Masukkan kode mata uang asal (misal: usd/eur/gbp)\t: ").lower()
     tujuan = input("🔸 Masukkan kode mata uang tujuan (misal: jpy/cny/zar)\t: ").lower()
 
-    # validasi masukannya apakah asal dan tujuannya tersedia di database, jika tidak maka hentikan fungsi dengan return
+    # validasi masukannya apakah asal dan tujuannya tersedia di database, jika tidak maka hentikan fungsi dan munculkan error
     if asal not in kurs or tujuan not in kurs:
         print("\n")
         print("⚠️  Uups… mata uang itu belum ada di sistem kami")
-        print(f"Kami belum bisa mengubah nilai dari {asal} ke {tujuan}")
-        print("\n")
         print("Coba pilih yang lain dulu ya 🙂")
-        return
+        raise ValueError(f"Kami belum bisa mengubah nilai dari {asal} ke {tujuan}")
 
     jumlah = float(input("🔸 Masukkan jumlah yang ingin kamu konversi\t\t: "))
 
@@ -51,4 +49,9 @@ for mata_uang in kurs:
     print(mata_uang.upper(), end=" ")
 
 print("\n")
-kurs_converter()
+
+# Mencoba kurs converter dan tangani ketika error
+try:
+    kurs_converter()
+except ValueError as message:
+    print("Error:", message)
