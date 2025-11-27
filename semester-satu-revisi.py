@@ -41,8 +41,8 @@ def kurs_converter():
     print(f"👉 {jumlah:.2f} {asal} setara dengan {hasil:.2f} {tujuan}")
 
 # Memberi salam, panduan, dan memanggil fungsi kurs konverter
-print("✨ Selamat datang di ruang konversi mata uang kami")
-print("🌍 Tempat di mana setiap angka berubah jadi nilai baru\n")
+print("✨ Selamat datang di konversi mata uang kami")
+print("🌍 Tempat konversi terbaik di muka bumi katanya Arkan\n")
 
 print("Silakan pilih mata uang yang ingin kamu jelajahi 💱")
 for mata_uang in kurs:
