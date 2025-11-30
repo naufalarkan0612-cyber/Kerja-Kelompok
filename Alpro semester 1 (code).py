@@ -16,7 +16,6 @@ kurs = {
     "btc" : 0.000011, # Bitcoin
     "eth" : 0.00033   # Etherium
 }
-}
 
 def kurs_converter(amount, awal, tujuan):
     if awal not in kurs or tujuan not in kurs:
@@ -36,7 +35,7 @@ try:
     tujuan = input("Masukkan kode mata uang tujuan (misal: dollar, eur, jpy): ").lower()
     
     hasil = kurs_converter(jumlah, awal, tujuan)
-    print(f"{jumlah} {awal} setara dengan {hasil:.2 {tujuan}.")
+    print(f"{jumlah} {awal} setara dengan {hasil:.2} {tujuan}.")
     
 except ValueError as x:
     print(f"Error: {x}")
