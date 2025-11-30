@@ -1,6 +1,6 @@
 # Jadi kita membuat program dan tampilan yang mudah dibaca oleh programmer lain
 # data kurs dari x-rates.com per 21 Oktober 2025)
-# data crypto dari tradingview.com per 27 November 2025)
+# data crypto dari tradingview.com per 29 November 2025)
 
 kurs = {
     "usd" : 1,        # USD
