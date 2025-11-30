@@ -1,4 +1,4 @@
-def kurs_converter(amount, awal, tujuan):
+def kurs_converter(jumlah, asal, tujuan):    
     kurs = {
         "dollar" : 1,     # USD
         "eur" : 0.859,    # Euro
@@ -16,14 +16,14 @@ def kurs_converter(amount, awal, tujuan):
         "eth" : 0.00033   # Etherium
     }
     # validasi
-    if awal not in kurs or tujuan not in kurs:
+    if asal not in kurs or tujuan not in kurs:
         raise ValueError("Maaf, sistem kami masih kentang, coba mata uang yang lain.")
     
     # Konversi dari mata uang asal ke USD
-    amount_in_usd = amount / kurs[awal]
+    jumlah_in_usd = jumlah / kurs[asal]
     # Konversi dari USD ke mata uang tujuan
-    converted_amount = amount_in_usd * kurs[tujuan]
-    return converted_amount
+    converted_jumlah = jumlah_in_usd * kurs[tujuan]
+    return converted_jumlah
 
 # START
 
