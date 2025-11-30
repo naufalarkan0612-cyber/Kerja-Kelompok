@@ -29,20 +29,18 @@ def kurs_converter(jumlah, asal, tujuan):
     return hasil_akhir
 
 # START
-
 try:
-    # dapatkan masukan jumlah, awal dan tujuan
+    # dapatkan masukan jumlah, asal dan tujuan
     jumlah = float(input("Masukkan jumlah uang yang akan dikonversi: "))
-    awal = input("Masukkan kode mata uang asal (misal: dollar, eur, jpy): ").lower()
+    asal = input("Masukkan kode mata uang asal (misal: dollar, eur, jpy): ").lower()
     tujuan = input("Masukkan kode mata uang tujuan (misal: dollar, eur, jpy): ").lower()
     
     # kalkulasikan hasilnya
-    hasil = kurs_converter(jumlah, awal, tujuan)
+    hasil = kurs_converter(jumlah, asal, tujuan)
 
     # Tampilkan kalimat akhir
-    print(f"{jumlah} {awal} setara dengan {hasil:.2} {tujuan}.")
+    print(f"{jumlah} {asal} setara dengan {hasil:.2} {tujuan}.")
     
 except ValueError as x:
     print(f"Error: {x}")
-
 #END
