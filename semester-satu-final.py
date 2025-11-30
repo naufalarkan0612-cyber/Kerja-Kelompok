@@ -15,26 +15,31 @@ def kurs_converter(jumlah, asal, tujuan):
         "btc" : 0.000011, # Bitcoin
         "eth" : 0.00033   # Etherium
     }
-    # validasi
+    # validasi apakah asal dan tujuan ada di kurs
     if asal not in kurs or tujuan not in kurs:
+        # jika tidak raise error
         raise ValueError("Maaf, sistem kami masih kentang, coba mata uang yang lain.")
     
     # Konversi dari mata uang asal ke USD
-    jumlah_in_usd = jumlah / kurs[asal]
+    konversi_ke_dollar = jumlah / kurs[asal]
     # Konversi dari USD ke mata uang tujuan
-    converted_jumlah = jumlah_in_usd * kurs[tujuan]
+    hasil_akhir = konversi_ke_dollar * kurs[tujuan]
 
     # selesai dan return
-    return converted_jumlah
+    return hasil_akhir
 
 # START
 
 try:
+    # dapatkan masukan jumlah, awal dan tujuan
     jumlah = float(input("Masukkan jumlah uang yang akan dikonversi: "))
     awal = input("Masukkan kode mata uang asal (misal: dollar, eur, jpy): ").lower()
     tujuan = input("Masukkan kode mata uang tujuan (misal: dollar, eur, jpy): ").lower()
     
+    # kalkulasikan hasilnya
     hasil = kurs_converter(jumlah, awal, tujuan)
+
+    # Tampilkan kalimat akhir
     print(f"{jumlah} {awal} setara dengan {hasil:.2} {tujuan}.")
     
 except ValueError as x:
