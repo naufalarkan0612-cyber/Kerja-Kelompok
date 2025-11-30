@@ -15,9 +15,9 @@ def kurs_converter(jumlah, asal, tujuan):
         "btc" : 0.000011, # Bitcoin
         "eth" : 0.00033   # Etherium
     }
-    # validasi apakah asal dan tujuan ada di kurs
+    # validasi apakah asal dan tujuan tidak ada di kurs
     if asal not in kurs or tujuan not in kurs:
-        # jika tidak raise error
+        # jika tidak ada, raise error
         raise ValueError("Maaf, sistem kami masih kentang, coba mata uang yang lain.")
     
     # Konversi dari mata uang asal ke USD
